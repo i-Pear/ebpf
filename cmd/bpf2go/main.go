@@ -362,6 +362,9 @@ func (b2g *bpf2go) convert(tgt target, goarches []goarch) (err error) {
 	}
 
 	var dep bytes.Buffer
+	for _, cf := range cFlags {
+		println(cf)
+	}
 	err = compile(compileArgs{
 		cc:     b2g.cc,
 		cFlags: cFlags,
